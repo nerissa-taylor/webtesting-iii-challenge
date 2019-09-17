@@ -4,8 +4,9 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import Controls from './Controls';
+import Dashboard from '../dashboard/Dashboard';
 
-test('toggled-Locked Open Gate', () => {
+test('find toggledLocked', () => {
     // Arrange
     const { findByText } = render(<Controls />);
     // Act - getting the node by text
@@ -14,7 +15,7 @@ test('toggled-Locked Open Gate', () => {
     // Assertion is if ^^^ is truthy
 });
 
-it('display "Closed" text', () => {
+test('display "Closed" text', () => {
     const { getByText, findByText } = render(<Controls />);
     // Click button
     fireEvent.click(getByText("Close Gate"));
@@ -28,3 +29,9 @@ test('toggledClosed disabled if Lock Gate', () => {
 });
 
 // test('button text changes to reflect the state the door when clicked')
+// it('Controls button  changes from open to close', () => {
+//     const { queryByText, findByText } = render(<Controls />)
+//     fireEvent.click(queryByText(/open gate/i));
+//     findByText(/unlock gate/i);
+// })
+
