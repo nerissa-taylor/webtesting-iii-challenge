@@ -28,10 +28,11 @@ test('toggledClosed disabled if Lock Gate', () => {
     findAllByText(/lock gate/i);
 });
 
-// test('button text changes to reflect the state the door when clicked')
-// it('Controls button  changes from open to close', () => {
-//     const { queryByText, findByText } = render(<Controls />)
-//     fireEvent.click(queryByText(/open gate/i));
-//     findByText(/unlock gate/i);
-// })
+//test('button text changes to reflect the state the door when clicked')
+it('Controls button  changes from open to close', () => {
+    const { getByText, findByText } = render(<Controls />)
+    const gate = getByText(/close gate/i)
+    fireEvent.click(gate);
+    findByText(/unlock gate/i);
+})
 
